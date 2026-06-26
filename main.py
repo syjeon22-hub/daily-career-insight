@@ -12,7 +12,7 @@ NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET")
 
 # 제미나이 AI 설정
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash-latest')
+model = genai.GenerativeModel('gemini-pro')
 
 def get_naver_news(query, display=5):
     """네이버 API를 사용해 뉴스를 검색합니다."""
