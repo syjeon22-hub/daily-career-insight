@@ -1,9 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026.06.26 제약·바이오 QA/QC 취업 전략 보고서</title>
+    <title>일간 제약·바이오 QA/QC 취업 전략 보고서</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -22,7 +23,7 @@
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
             <div>
                 <h1 class="text-3xl font-bold">Bio-Ready: Daily Career Insights</h1>
-                <p class="text-indigo-200 mt-2">2026년 6월 26일 | 제약·바이오 QA/QC 취업 전략 보고서</p>
+                <p class="text-indigo-200 mt-2" id="header-date">데이터를 불러오는 중입니다...</p>
             </div>
             <div class="mt-4 md:mt-0 text-right">
                 <span class="bg-emerald-500 text-white px-4 py-1 rounded-full text-sm font-semibold">Today's Update 완료</span>
@@ -35,18 +36,15 @@
         <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div class="glass-card p-6 rounded-2xl shadow-sm border-l-4 border-blue-500">
                 <h3 class="text-sm text-slate-500 font-semibold mb-1">오늘의 핵심 뉴스</h3>
-                <p class="text-lg font-bold text-slate-800">보령, 예산 공장 GMP 가동 확대</p>
-                <p class="text-xs text-blue-600 mt-2">#품질관리_디지털화 #글로벌표준</p>
+                <p class="text-lg font-bold text-slate-800" id="dash-news-title">로딩 중...</p>
             </div>
             <div class="glass-card p-6 rounded-2xl shadow-sm border-l-4 border-emerald-500">
-                <h3 class="text-sm text-slate-500 font-semibold mb-1">신규 채용 공고</h3>
-                <p class="text-lg font-bold text-slate-800">삼성바이오로직스 외 4건</p>
-                <p class="text-xs text-emerald-600 mt-2">#신입환영 #화학생명과학_우대</p>
+                <h3 class="text-sm text-slate-500 font-semibold mb-1">오늘의 취준 전략</h3>
+                <p class="text-lg font-bold text-slate-800" id="dash-strategy-title">로딩 중...</p>
             </div>
             <div class="glass-card p-6 rounded-2xl shadow-sm border-l-4 border-amber-500">
                 <h3 class="text-sm text-slate-500 font-semibold mb-1">글로벌 경제 지수</h3>
-                <p class="text-lg font-bold text-slate-800">미국 연준, 금리 동결 시사</p>
-                <p class="text-xs text-amber-600 mt-2">#바이오투자_심리회복 #R&D증대</p>
+                <p class="text-lg font-bold text-slate-800" id="dash-econ-title">로딩 중...</p>
             </div>
         </section>
 
@@ -55,7 +53,6 @@
             <button onclick="switchTab('news')" id="tab-news" class="nav-btn pb-4 text-slate-500 hover:text-slate-800 whitespace-nowrap active">1. 산업 뉴스 분석</button>
             <button onclick="switchTab('jobs')" id="tab-jobs" class="nav-btn pb-4 text-slate-500 hover:text-slate-800 whitespace-nowrap">2. 맞춤 채용 정보</button>
             <button onclick="switchTab('appendix')" id="tab-appendix" class="nav-btn pb-4 text-slate-500 hover:text-slate-800 whitespace-nowrap">3. 글로벌 경제 브리핑</button>
-            <button onclick="switchTab('ai')" id="tab-ai" class="nav-btn pb-4 text-slate-500 hover:text-slate-800 whitespace-nowrap flex items-center"><span class="mr-1">✨</span> 4. AI 취업 컨설팅</button>
         </nav>
 
         <!-- Tab 1: News Analysis -->
@@ -65,136 +62,27 @@
                 <p class="text-slate-600">제약바이오 산업의 흐름을 읽고 QA/QC 직무 역량으로 연결하는 섹션입니다.</p>
             </div>
             <div class="bg-white p-8 rounded-2xl shadow-md">
-                <article>
-                    <div class="flex items-center space-x-2 mb-4 text-indigo-600 text-sm font-bold">
-                        <span>[헤드라인 뉴스]</span>
-                        <span class="text-slate-300">|</span>
-                        <span>기업: 보령(Boryung)</span>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4 hover:text-indigo-700 transition-colors">보령, 예산 캠퍼스 백신 공장 가동 확대... "글로벌 품질 표준 맞춘다"</h3>
-                    
-                    <div class="prose prose-slate max-w-none mb-6">
-                        <p class="bg-slate-50 p-4 border-l-4 border-slate-200 italic mb-4">
-                            "보령은 최근 예산 캠퍼스 내 백신 공장의 생산 라인을 증설하고, 글로벌 시장 진출을 위해 고도화된 GMP 품질 관리 시스템을 전격 도입했다. 이번 공장 가동 확대는 단순 생산량 증대를 넘어 해외 규제 기관의 실사를 통과하기 위한 철저한 품질 보증 체계를 구축했다는 데 의미가 있다..."
-                        </p>
-                        <a href="https://www.boryung.co.kr" target="_blank" class="text-indigo-600 hover:underline text-sm font-semibold inline-flex items-center">
-                            원문 기사 링크 바로가기 &#10132;
-                        </a>
-                    </div>
-
-                    <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 mb-8">
-                        <h4 class="text-indigo-900 font-bold mb-2">💡 취준생을 위한 한줄 요약</h4>
-                        <p class="text-indigo-800">보령은 예산 공장의 글로벌 표준화를 위해 QMS(품질관리시스템) 고도화와 데이터 무결성(Data Integrity) 강화에 주력하고 있으며, 이는 곧 글로벌 실사 대응이 가능한 신입 QA 인재 수요 확대를 시사함.</p>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="space-y-4">
-                            <h4 class="text-lg font-bold flex items-center text-slate-800">
-                                <span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">QA</span>
-                                QA 관점 해석
-                            </h4>
-                            <p class="text-slate-600 leading-relaxed">
-                                공장 가동 확대와 글로벌 표준 도입은 <strong>밸리데이션(Validation)</strong>과 <strong>SOP(표준작업지침서)</strong> 개정 업무가 폭발적으로 증가함을 의미합니다. 특히 해외 수출을 목표로 한다면 ICH 가이드라인에 따른 품질 보증 체계 구축 경험이 중요해집니다.
-                            </p>
-                        </div>
-                        <div class="space-y-4">
-                            <h4 class="text-lg font-bold flex items-center text-slate-800">
-                                <span class="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">QC</span>
-                                QC 관점 해석
-                            </h4>
-                            <p class="text-slate-600 leading-relaxed">
-                                백신 공장의 특성상 <strong>무균 시험</strong>과 <strong>미생물 한도 시험</strong> 역량이 필수적입니다. 자동화된 품질 관리 시스템 도입에 따라 시험 데이터를 정확하게 기록하고 관리하는 <strong>DI(Data Integrity)</strong> 역량이 면접의 핵심 질문이 될 것입니다.
-                            </p>
-                        </div>
-                    </div>
+                <article id="dynamic-news-article">
+                    <p class="text-center text-slate-400 py-10">데이터를 분석 중입니다...</p>
                 </article>
             </div>
         </div>
 
-        <!-- Tab 2: Job Postings -->
+        <!-- Tab 2: Job Postings & Strategy -->
         <div id="jobs-content" class="tab-content">
             <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                    <h2 class="text-2xl font-bold text-slate-800 mb-2">맞춤 채용 공고 분석 (신입 전용)</h2>
-                    <p class="text-slate-600">4년제 화학/생과 졸업생에게 최적화된 공고를 선별했습니다.</p>
+                    <h2 class="text-2xl font-bold text-slate-800 mb-2">오늘의 취준 전략 및 맞춤 공고</h2>
+                    <p class="text-slate-600">오늘의 업계 이슈를 바탕으로 한 구체적인 취업 준비 가이드라인입니다.</p>
                 </div>
-                <div class="chart-container h-48 w-full md:w-64">
-                    <canvas id="jobTypeChart"></canvas>
-                </div>
+            </div>
+            
+            <div class="bg-indigo-50 p-6 rounded-xl border border-indigo-100 mb-8" id="dynamic-strategy">
+                <!-- 전략 내용이 여기에 들어갑니다 -->
             </div>
 
             <div class="grid grid-cols-1 gap-6" id="job-list">
-                <!-- Job 1: Large -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">대기업</span>
-                            <h3 class="text-xl font-bold mt-2">삼성바이오로직스 - QC 신입 채용</h3>
-                        </div>
-                        <span class="text-slate-400 text-sm">등록일: 2026.06.24</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 text-sm text-slate-600">
-                        <div class="flex items-center italic">📍 근무지: 인천 송도</div>
-                        <div class="flex items-center italic">🎓 학력: 학사 이상 (화학/바이오)</div>
-                        <div class="flex items-center italic">📅 마감: 2026.07.10</div>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-blue-500">
-                        <h4 class="font-bold text-slate-800 mb-2">🔍 직무 분석 (인재상 기반)</h4>
-                        <p class="text-sm text-slate-600 mb-2">삼바의 인재상은 '최고의 기술과 인간애'를 지향합니다. QC 직무에서는 대규모 생산 라인의 <strong>Data Integrity</strong>를 철저히 지킬 수 있는 정직함과 정밀한 분석 역량이 핵심입니다.</p>
-                        <ul class="text-xs text-indigo-600 font-semibold space-y-1">
-                            <li>#LIMS_시스템_활용 #HPLC_GC_운용 #글로벌_품질기준_준수</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="mt-4 block text-center py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">공고 자세히 보기</a>
-                </div>
-
-                <!-- Job 2: Mid -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">중견기업</span>
-                            <h3 class="text-xl font-bold mt-2">대원제약 - QA 품질보증팀 신입 모집</h3>
-                        </div>
-                        <span class="text-slate-400 text-sm">등록일: 2026.06.25</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 text-sm text-slate-600">
-                        <div class="flex items-center italic">📍 근무지: 충북 진천</div>
-                        <div class="flex items-center italic">🎓 학력: 학사 이상 (화학)</div>
-                        <div class="flex items-center italic">📅 마감: 2026.07.05</div>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-emerald-500">
-                        <h4 class="font-bold text-slate-800 mb-2">🔍 직무 분석 (인재상 기반)</h4>
-                        <p class="text-sm text-slate-600 mb-2">대원제약은 '건강한 가치를 실현하는 동반자'를 지향합니다. QA 직무에서는 신규 생산 라인의 <strong>GMP 문서 관리</strong>와 타 부서와의 원활한 커뮤니케이션 능력을 갖춘 협력적 인재를 선호합니다.</p>
-                        <ul class="text-xs text-emerald-600 font-semibold space-y-1">
-                            <li>#SOP_작성능력 #GMP_교육지원 #꼼꼼한_문서검토</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="mt-4 block text-center py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 transition-colors">공고 자세히 보기</a>
-                </div>
-
-                <!-- Job 3: Small/Mid -->
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-                    <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-md text-xs font-bold uppercase tracking-wider">강소기업</span>
-                            <h3 class="text-xl font-bold mt-2">바이오니아 - QC 이화학 분석 신입</h3>
-                        </div>
-                        <span class="text-slate-400 text-sm">등록일: 2026.06.26</span>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4 text-sm text-slate-600">
-                        <div class="flex items-center italic">📍 근무지: 대전 유성</div>
-                        <div class="flex items-center italic">🎓 학력: 학사 이상 (생명과학/화학)</div>
-                        <div class="flex items-center italic">📅 마감: 채용시 마감</div>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-amber-500">
-                        <h4 class="font-bold text-slate-800 mb-2">🔍 직무 분석 (인재상 기반)</h4>
-                        <p class="text-sm text-slate-600 mb-2">혁신을 중시하는 바이오니아는 <strong>주도적으로 실험 환경을 개선</strong>하려는 의지를 중요하게 봅니다. 신입이라도 기기 분석 원리를 명확히 이해하고 트러블슈팅에 도전하는 자세가 필수입니다.</p>
-                        <ul class="text-xs text-amber-600 font-semibold space-y-1">
-                            <li>#분석기기_운용 #원료_완제_이화학시험 #도전적_실험자세</li>
-                        </ul>
-                    </div>
-                    <a href="#" class="mt-4 block text-center py-2 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-colors">공고 자세히 보기</a>
-                </div>
+                <!-- 채용 공고가 여기에 들어갑니다 -->
             </div>
         </div>
 
@@ -204,112 +92,11 @@
                 <h2 class="text-2xl font-bold text-slate-800 mb-2">오늘의 글로벌 경제 이슈 Briefing</h2>
                 <p class="text-slate-600">거시적 흐름을 읽어 면접 시 식견을 보여주세요.</p>
             </div>
-            <div class="bg-white p-8 rounded-2xl shadow-md space-y-4">
-                <div class="flex items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
-                    <span class="text-2xl mr-4">🇺🇸</span>
-                    <div>
-                        <h4 class="font-bold text-slate-800">미국 연준, 하반기 금리 인하 가능성 시사</h4>
-                        <p class="text-sm text-slate-500 mt-1">인플레이션 둔화세에 따라 9월경 금리 인하 논의가 본격화될 것으로 보이며, 이는 기술 집약적 산업인 바이오 섹터의 투자 활성화를 촉진할 전망.</p>
-                    </div>
-                </div>
-                <div class="flex items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
-                    <span class="text-2xl mr-4">🤖</span>
-                    <div>
-                        <h4 class="font-bold text-slate-800">엔비디아, 의료용 AI 전용 칩 발표</h4>
-                        <p class="text-sm text-slate-500 mt-1">신약 개발 기간을 획기적으로 단축할 수 있는 AI 연산 칩을 발표하며 디지털 헬스케어와 빅테크의 결합이 가속화됨.</p>
-                    </div>
-                </div>
-                <div class="flex items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
-                    <span class="text-2xl mr-4">🇪🇺</span>
-                    <div>
-                        <h4 class="font-bold text-slate-800">EU, 탄소국경세(CBAM) 강화 조치 시행</h4>
-                        <p class="text-sm text-slate-500 mt-1">제조업 전반의 탄소 배출 규제가 강화됨에 따라 제약사들도 생산 공정 내 친환경 에너지를 도입해야 하는 비용 압박에 직면.</p>
-                    </div>
-                </div>
-                <div class="flex items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
-                    <span class="text-2xl mr-4">🇰🇷</span>
-                    <div>
-                        <h4 class="font-bold text-slate-800">국내 수출 지표 3개월 연속 흑자 달성</h4>
-                        <p class="text-sm text-slate-500 mt-1">반도체와 바이오 의약품 중심의 수출 호조세가 이어지며 국내 경기 회복에 대한 기대감이 고조됨.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab 4: AI Assistant -->
-        <div id="ai-content" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-2xl font-bold text-slate-800 mb-2 flex items-center">
-                    ✨ Gemini AI 자소서 & 면접 코치
-                </h2>
-                <p class="text-slate-600">오늘 뜬 채용 공고와 나의 경험을 바탕으로, AI가 맞춤형 자소서 초안과 예상 면접 질문을 실시간으로 생성해 드립니다.</p>
-            </div>
-            
-            <div class="bg-white p-8 rounded-2xl shadow-md border border-indigo-100">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Input Section -->
-                    <div class="space-y-6">
-                        <div>
-                            <label for="ai-job-select" class="block text-sm font-semibold text-slate-700 mb-2">1. 타겟 채용 공고 선택</label>
-                            <select id="ai-job-select" class="w-full border border-slate-300 rounded-lg p-3 text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50">
-                                <option value="삼성바이오로직스 QC 신입">삼성바이오로직스 - QC 신입</option>
-                                <option value="대원제약 QA 품질보증팀 신입">대원제약 - QA 품질보증팀 신입</option>
-                                <option value="바이오니아 QC 이화학 분석 신입">바이오니아 - QC 이화학 분석 신입</option>
-                            </select>
-                        </div>
-                        
-                        <div>
-                            <label for="ai-user-exp" class="block text-sm font-semibold text-slate-700 mb-2">
-                                2. 나의 핵심 경험 및 키워드 (선택 사항)
-                            </label>
-                            <textarea id="ai-user-exp" rows="4" class="w-full border border-slate-300 rounded-lg p-3 text-slate-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-slate-50 placeholder-slate-400" placeholder="예: 학부 시절 HPLC 기기 분석 프로젝트 리더 경험, 꼼꼼하고 규칙 준수를 중시하는 성격, 식약처 GMP 실무 교육 이수..."></textarea>
-                            <p class="text-xs text-slate-500 mt-2">* 구체적으로 적을수록 AI가 더 정교하고 맞춤화된 답변을 생성합니다.</p>
-                        </div>
-                        
-                        <div class="flex space-x-4">
-                            <button onclick="generateAIContent('cover-letter')" class="flex-1 bg-indigo-600 text-white font-bold py-3 px-4 rounded-xl shadow-sm hover:bg-indigo-700 transition-colors flex justify-center items-center">
-                                📝 자소서 초안 생성
-                            </button>
-                            <button onclick="generateAIContent('interview')" class="flex-1 bg-emerald-600 text-white font-bold py-3 px-4 rounded-xl shadow-sm hover:bg-emerald-700 transition-colors flex justify-center items-center">
-                                🎤 예상 면접 질문
-                            </button>
-                        </div>
-                        
-                        <div id="ai-message-box" class="hidden text-sm font-semibold text-amber-600 bg-amber-50 p-3 rounded-lg border border-amber-200">
-                            <!-- Error messages will appear here -->
-                        </div>
-                    </div>
-
-                    <!-- Result Section -->
-                    <div class="bg-slate-50 rounded-xl p-6 border border-slate-200 h-full min-h-[300px] flex flex-col">
-                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wider mb-4 border-b border-slate-200 pb-2">AI 컨설팅 결과</h3>
-                        
-                        <!-- Loading State -->
-                        <div id="ai-loading" class="hidden flex-1 flex flex-col items-center justify-center text-slate-400">
-                            <svg class="animate-spin h-10 w-10 text-indigo-500 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            <p class="font-medium animate-pulse text-indigo-600">제약바이오 전문 AI가 답변을 생성하고 있습니다...</p>
-                        </div>
-                        
-                        <!-- Result Content -->
-                        <div id="ai-result" class="flex-1 text-slate-700 leading-relaxed overflow-y-auto prose prose-sm max-w-none">
-                            <div class="h-full flex flex-col items-center justify-center text-slate-400 text-center">
-                                <span class="text-4xl mb-3">🤖</span>
-                                <p>좌측에서 공고를 선택하고 키워드를 입력한 뒤<br>생성 버튼을 눌러주세요.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="bg-white p-8 rounded-2xl shadow-md space-y-4" id="econ-list">
+                <p class="text-center text-slate-400 py-10">데이터를 분석 중입니다...</p>
             </div>
         </div>
     </main>
-
-    <footer class="mt-12 border-t border-slate-200 pt-8 text-center text-slate-400 text-sm">
-        <p>© 2026 Bio-Career Assistant. 모든 정보는 취업 준비 목적의 참고 자료입니다.</p>
-        <p class="mt-1 italic">제약바이오 4년제 화학생명과학과 신입 취준생을 응원합니다.</p>
-    </footer>
 
     <script>
         // Tab Navigation Logic
@@ -322,138 +109,79 @@
             
             document.getElementById(`${tabName}-content`).classList.add('active');
             document.getElementById(`tab-${tabName}`).classList.add('active');
+        }
 
-            if (tabName === 'jobs') {
-                initCharts();
+        // Fetch and Populate Data
+        async function loadDailyData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+
+                // Header & Dashboard
+                document.getElementById('header-date').textContent = `${data.date} | 제약·바이오 QA/QC 취업 전략 보고서`;
+                document.getElementById('dash-news-title').textContent = data.news.headline;
+                document.getElementById('dash-strategy-title').textContent = data.strategy.title;
+                document.getElementById('dash-econ-title').textContent = data.economy[0].headline;
+
+                // Tab 1: News
+                const newsHtml = `
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">${data.news.headline}</h3>
+                    <div class="prose prose-slate max-w-none mb-6">
+                        <p class="bg-slate-50 p-4 border-l-4 border-slate-200 italic mb-4">${data.news.summary}</p>
+                        <a href="${data.news.link}" target="_blank" class="text-indigo-600 hover:underline text-sm font-semibold inline-flex items-center">원문 기사 링크 바로가기 &#10132;</a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-4">
+                            <h4 class="text-lg font-bold flex items-center text-slate-800"><span class="bg-indigo-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">QA</span>QA 관점 해석</h4>
+                            <p class="text-slate-600 leading-relaxed">${data.news.qa_insight}</p>
+                        </div>
+                        <div class="space-y-4">
+                            <h4 class="text-lg font-bold flex items-center text-slate-800"><span class="bg-emerald-600 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs mr-2">QC</span>QC 관점 해석</h4>
+                            <p class="text-slate-600 leading-relaxed">${data.news.qc_insight}</p>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('dynamic-news-article').innerHTML = newsHtml;
+
+                // Tab 2: Strategy & Jobs
+                document.getElementById('dynamic-strategy').innerHTML = `
+                    <h4 class="text-indigo-900 font-bold mb-2">💡 오늘의 맞춤 취준 전략: ${data.strategy.title}</h4>
+                    <ul class="list-disc pl-5 text-indigo-800 space-y-1 text-sm">
+                        ${data.strategy.points.map(point => `<li>${point}</li>`).join('')}
+                    </ul>
+                `;
+
+                const jobsHtml = data.jobs.map(job => `
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 class="text-xl font-bold mb-2">${job.company} - ${job.title}</h3>
+                        <div class="bg-slate-50 p-4 rounded-lg border-l-4 border-blue-500 mb-4">
+                            <h4 class="font-bold text-slate-800 mb-2">🔍 맞춤 직무 분석</h4>
+                            <p class="text-sm text-slate-600">${job.analysis}</p>
+                        </div>
+                        <a href="${job.link}" target="_blank" class="block text-center py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">공고 자세히 보기</a>
+                    </div>
+                `).join('');
+                document.getElementById('job-list').innerHTML = jobsHtml;
+
+                // Tab 3: Economy
+                const econHtml = data.economy.map(eco => `
+                    <div class="flex items-start p-4 hover:bg-slate-50 rounded-xl transition-colors">
+                        <span class="text-2xl mr-4">📊</span>
+                        <div>
+                            <h4 class="font-bold text-slate-800">${eco.headline}</h4>
+                            <p class="text-sm text-slate-500 mt-1">${eco.summary}</p>
+                        </div>
+                    </div>
+                `).join('');
+                document.getElementById('econ-list').innerHTML = econHtml;
+
+            } catch (error) {
+                console.error('데이터를 불러오지 못했습니다.', error);
             }
         }
 
-        // Charts Initialization
-        let chartInstance = null;
-        function initCharts() {
-            if (chartInstance) chartInstance.destroy();
-            
-            const ctx = document.getElementById('jobTypeChart').getContext('2d');
-            chartInstance = new Chart(ctx, {
-                type: 'doughnut',
-                data: {
-                    labels: ['대기업', '중견기업', '강소기업'],
-                    datasets: [{
-                        data: [1, 1, 1],
-                        backgroundColor: ['#3b82f6', '#10b981', '#f59e0b'],
-                        borderWidth: 0,
-                        hoverOffset: 10
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: {
-                            position: 'right',
-                            labels: {
-                                boxWidth: 12,
-                                font: { size: 11 }
-                            }
-                        },
-                        title: {
-                            display: true,
-                            text: '오늘의 공고 분포',
-                            font: { weight: 'bold' }
-                        }
-                    },
-                    cutout: '70%'
-            }
-        });
-    }
-
-    function showMessage(msg) {
-        const msgBox = document.getElementById('ai-message-box');
-        msgBox.textContent = msg;
-        msgBox.classList.remove('hidden');
-        setTimeout(() => {
-            msgBox.classList.add('hidden');
-        }, 3000);
-    }
-
-    async function generateAIContent(type) {
-        const jobSelect = document.getElementById('ai-job-select').value;
-        const userExp = document.getElementById('ai-user-exp').value;
-        const resultDiv = document.getElementById('ai-result');
-        const loadingDiv = document.getElementById('ai-loading');
-        
-        if (!userExp.trim()) {
-            showMessage("나의 핵심 경험 및 키워드를 간단히라도 입력해 주세요.");
-            return;
-        }
-
-        // UI State Update
-        document.getElementById('ai-message-box').classList.add('hidden');
-        resultDiv.innerHTML = '';
-        resultDiv.classList.add('hidden');
-        loadingDiv.classList.remove('hidden');
-
-        const apiKey = ""; // API Key is auto-injected by Canvas
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-
-        // Construct Prompt
-        let promptText = "";
-        if (type === 'cover-letter') {
-            promptText = `다음 정보를 바탕으로 제약바이오 신입 직무에 맞는 자소서(지원동기 및 직무역량 중심) 문단 초안을 약 500자 내외로 작성해줘.\n\n- 타겟 공고: ${jobSelect}\n- 지원자 핵심 경험 및 성향: ${userExp}\n\n신입으로서의 열정과 해당 공고(QA/QC)에 맞는 전문 용어(GMP, 데이터 무결성 등)를 자연스럽게 녹여내서 설득력 있게 작성해줘.`;
-        } else {
-            promptText = `다음 정보를 바탕으로 면접관이 질문할 만한 핵심 직무 및 인성 면접 질문 3가지와 각각에 대한 훌륭한 답변 방향성(팁)을 작성해줘.\n\n- 타겟 공고: ${jobSelect}\n- 지원자 핵심 경험 및 성향: ${userExp}\n\n지원자의 경험을 어떻게 해당 기업의 인재상이나 직무 특성과 연결할 수 있을지 구체적인 조언을 포함해줘.`;
-        }
-
-        const payload = {
-            contents: [{ parts: [{ text: promptText }] }],
-            systemInstruction: {
-                parts: [{ text: "당신은 제약바이오 산업(특히 QA, QC 직무) 전문 취업 컨설턴트입니다. 신입 지원자를 위해 전문적이고 논리적이며 실무 친화적인 맞춤형 조언을 제공합니다. 출력 결과물은 가독성을 위해 마크다운(##, **, - 등)을 적절히 사용하여 구조화해주세요." }]
-            }
-        };
-
-        try {
-            const response = await fetch(apiUrl, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-            
-            const result = await response.json();
-            
-            if (result.error) {
-                throw new Error(result.error.message || 'API Error');
-            }
-
-            const text = result.candidates?.[0]?.content?.parts?.[0]?.text || "결과를 생성하지 못했습니다.";
-            
-            // Simple Markdown to HTML converter for displaying formatting
-            const formattedText = text
-                .replace(/^### (.*$)/gim, '<h3 class="text-lg font-bold text-indigo-700 mt-4 mb-2">$1</h3>')
-                .replace(/^## (.*$)/gim, '<h2 class="text-xl font-bold text-indigo-800 mt-5 mb-2">$1</h2>')
-                .replace(/^\*\*([^*]+)\*\*/gim, '<strong class="text-slate-800">$1</strong>')
-                .replace(/\*\*([^*]+)\*\*/g, '<strong class="text-slate-800">$1</strong>')
-                .replace(/^\* (.*$)/gim, '<li class="ml-4 list-disc">$1</li>')
-                .replace(/\n/g, '<br/>');
-
-            resultDiv.innerHTML = `<div class="space-y-2 text-sm">${formattedText}</div>`;
-            
-        } catch (error) {
-            console.error("Gemini API Error:", error);
-            resultDiv.innerHTML = `
-                <div class="bg-red-50 text-red-600 p-4 rounded-lg border border-red-200">
-                    <p class="font-bold mb-1">앗, 결과를 불러오는 중 문제가 발생했습니다.</p>
-                    <p class="text-sm">잠시 후 다시 시도해 주세요.</p>
-                </div>`;
-        } finally {
-            loadingDiv.classList.add('hidden');
-            resultDiv.classList.remove('hidden');
-        }
-    }
-
-    // Initialize first tab
-    window.onload = () => {
-            console.log("Application Loaded");
-        };
+        window.onload = loadDailyData;
     </script>
 </body>
 </html>
+```
