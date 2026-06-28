@@ -5,14 +5,14 @@ from datetime import datetime
 from zoneinfo import ZoneInfo
 import google.generativeai as genai
 
-# 금고(Secrets)에서 API 키 불러오기 (사람인 제외)
+# 금고(Secrets)에서 API 키 불러오기
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 NAVER_CLIENT_ID = os.environ.get("NAVER_CLIENT_ID")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET")
 
 genai.configure(api_key=GEMINI_API_KEY)
-# 3.1 Pro 모델 사용
-model = genai.GenerativeModel('gemini-3.1-pro-preview')
+# 🚨 요금제 제한(429 에러)을 피하기 위해 반드시 완전 무료인 Flash 모델 사용
+model = genai.GenerativeModel('gemini-3.5-flash')
 
 def get_naver_news(query, display=10):
     encText = urllib.parse.quote(query)
@@ -116,6 +116,7 @@ def main():
         print("성공적으로 data.json 파일이 생성되었습니다.")
     except Exception as e:
         print(f"오류가 발생했습니다: {e}")
+        raise e # 에러 발생 시 조용히 넘어가지 않고 시스템에 보고하도록 강제 설정
 
 if __name__ == "__main__":
     main()
