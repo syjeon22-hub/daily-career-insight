@@ -35,7 +35,7 @@ def main():
     bio_news = get_naver_news("제약 바이오 품질관리 QA QC", 5)
     econ_news = get_naver_news("글로벌 경제 거시경제 동향", 10)
 
-prompt = f"""
+    prompt = f"""
     너는 제약·바이오 QA/QC 취업 전문 컨설턴트야. 아래 데이터를 분석해 JSON을 생성해.
 
     [바이오 뉴스]: {bio_news}
