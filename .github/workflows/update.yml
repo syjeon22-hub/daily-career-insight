@@ -2,7 +2,7 @@ name: Daily Auto Update
 
 on:
   schedule:
-    - cron: '0 20 * * *'
+    - cron: '0 15 * * *' # 한국 시간 기준 매일 밤 12시(자정)에 실행
   workflow_dispatch:
 
 permissions:
