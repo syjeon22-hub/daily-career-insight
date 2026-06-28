@@ -114,7 +114,7 @@ html
         // Fetch and Populate Data
         async function loadDailyData() {
             try {
-                const response = await fetch('data.json');
+                const response = await fetch('data.json?v=' + new Date().getTime());
                 const data = await response.json();
 
                 // Header & Dashboard
