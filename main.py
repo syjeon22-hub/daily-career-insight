@@ -15,7 +15,7 @@ NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET")
 genai.configure(api_key=GEMINI_API_KEY)
 
 # 💡 자동화 봇에 최적화된 넉넉한 무료 한도(분당 15회)의 주력 모델 사용
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-3.5-flash')
 
 def get_naver_news(query, display=10):
     encText = urllib.parse.quote(query)
