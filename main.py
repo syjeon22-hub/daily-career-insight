@@ -1,9 +1,11 @@
 import os
 import json
 import urllib.request
+import time  # 🚨 대기 시간을 위한 모듈 추가
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import google.generativeai as genai
+from google.api_core.exceptions import ResourceExhausted # 🚨 429 에러 감지용 모듈
 
 # 금고(Secrets)에서 API 키 불러오기
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
@@ -11,8 +13,9 @@ NAVER_CLIENT_ID = os.environ.get("NAVER_CLIENT_ID")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET")
 
 genai.configure(api_key=GEMINI_API_KEY)
-# 🚨 요금제 제한(429 에러)을 피하기 위해 반드시 완전 무료인 Flash 모델 사용
-model = genai.GenerativeModel('gemini-3.5-flash')
+
+# 💡 자동화 봇에 최적화된 넉넉한 무료 한도(분당 15회)의 주력 모델 사용
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 def get_naver_news(query, display=10):
     encText = urllib.parse.quote(query)
@@ -31,7 +34,6 @@ def get_naver_news(query, display=10):
 def main():
     today_str = datetime.now(ZoneInfo("Asia/Seoul")).strftime("%Y년 %m월 %d일")
 
-    # 뉴스 수집량 넉넉하게 확보
     bio_news = get_naver_news("제약 바이오 품질관리 QA QC", 5)
     econ_news = get_naver_news("글로벌 경제 거시경제 동향", 10)
 
@@ -101,22 +103,36 @@ def main():
     }}
     """
 
-    try:
-        response = model.generate_content(prompt)
-        result_text = response.text.strip()
-        if result_text.startswith("```json"):
-            result_text = result_text[7:-3].strip()
-        elif result_text.startswith("```"):
-            result_text = result_text[3:-3].strip()
+    max_retries = 3 # 최대 3번까지 재시도
+    
+    for attempt in range(max_retries):
+        try:
+            # AI에게 요청 보내기
+            response = model.generate_content(prompt)
+            result_text = response.text.strip()
             
-        json_data = json.loads(result_text)
+            if result_text.startswith("```json"):
+                result_text = result_text[7:-3].strip()
+            elif result_text.startswith("```"):
+                result_text = result_text[3:-3].strip()
+                
+            json_data = json.loads(result_text)
 
-        with open('data.json', 'w', encoding='utf-8') as f:
-            json.dump(json_data, f, ensure_ascii=False, indent=4)
-        print("성공적으로 data.json 파일이 생성되었습니다.")
-    except Exception as e:
-        print(f"오류가 발생했습니다: {e}")
-        raise e # 에러 발생 시 조용히 넘어가지 않고 시스템에 보고하도록 강제 설정
+            # 파일 저장
+            with open('data.json', 'w', encoding='utf-8') as f:
+                json.dump(json_data, f, ensure_ascii=False, indent=4)
+            print("성공적으로 data.json 파일이 생성되었습니다.")
+            
+            break # 성공했으므로 반복문 탈출
+            
+        except ResourceExhausted as e:
+            # 🚨 429 에러 발생 시 로봇이 죽지 않고 스스로 60초 대기 후 재시도
+            print(f"API 한도 초과 (429 에러). 60초 대기 후 스스로 재시도합니다... ({attempt+1}/{max_retries}회)")
+            time.sleep(60)
+            
+        except Exception as e:
+            print(f"알 수 없는 오류가 발생했습니다: {e}")
+            raise e
 
 if __name__ == "__main__":
     main()
